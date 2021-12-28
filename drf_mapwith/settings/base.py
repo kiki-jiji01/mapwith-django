@@ -50,7 +50,20 @@ WSGI_APPLICATION = 'drf_mapwith.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 
+# DATABASES
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mapwith',
+        'USER': 'jiji',
+        'PASSWORD': 'yaso0102',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 
