@@ -10,7 +10,7 @@ class  CountriesSerializer(ModelSerializer):
             "country_name",
             "content",
             "available",
-            
+            "user",
             "date_created",
             
         )
