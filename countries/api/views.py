@@ -13,6 +13,9 @@ class CountryCreateView(CreateAPIView):
     
     serializer_class = CountriesSerializer
     
+    def perform_create(self, serializer):
+            serializer.save(user=self.request.user)
+
 
 class  CountryDetailView(RetrieveAPIView):
     serializer_class = CountriesSerializer
