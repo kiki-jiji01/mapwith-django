@@ -6,7 +6,11 @@ class  CountriesSerializer(ModelSerializer):
     class Meta:
         model = Countries
         fields = (
+            "id",
             "country_name",
             "content",
+            "available",
+            
+            "date_created",
             
         )
