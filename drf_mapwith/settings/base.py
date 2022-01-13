@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'countries.apps.CountriesConfig',
     'rest_framework',
+    "rest_framework.authtoken",
     'corsheaders',
 
 ]
