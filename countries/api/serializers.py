@@ -14,3 +14,4 @@ class  CountriesSerializer(ModelSerializer):
             "date_created",
             
         )
+        read_only_fields = ( "date_created","user")
