@@ -1,16 +1,18 @@
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, RetrieveAPIView, DestroyAPIView
 from countries.models import Countries
 from .serializers import CountriesSerializer
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
 
 class CountryListView(ListAPIView):
+    permission_classes = [AllowAny]
     serializer_class = CountriesSerializer
 
     def get_queryset(self):
         return Countries.objects.all()
     
 class CountryCreateView(CreateAPIView):
-    
+    permission_classes = [IsAuthenticated]
     serializer_class = CountriesSerializer
     
     def perform_create(self, serializer):
@@ -18,6 +20,7 @@ class CountryCreateView(CreateAPIView):
 
 
 class  CountryDetailView(RetrieveAPIView):
+    permission_classes = [AllowAny]
     serializer_class = CountriesSerializer
 
     def get_queryset(self):
@@ -25,6 +28,7 @@ class  CountryDetailView(RetrieveAPIView):
     
     
 class CountryUpdateView(UpdateAPIView):
+    permission_classes = [AllowAny]
     serializer_class = CountriesSerializer
 
     def get_queryset(self):
@@ -32,5 +36,6 @@ class CountryUpdateView(UpdateAPIView):
     
 
 class CountryDeleteView(DestroyAPIView):
+    permission_classes = [AllowAny]
     def get_queryset(self):
         return Countries.objects.all()
