@@ -1,0 +1,1 @@
+FRONTEND_URL = "https://jobs.justdjango.com"

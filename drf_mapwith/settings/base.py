@@ -10,12 +10,18 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'countries.apps.CountriesConfig',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'rest_framework',
     "rest_framework.authtoken",
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
     'corsheaders',
 
 ]
@@ -52,9 +58,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'drf_mapwith.wsgi.application'
 
-# DATABASES
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+# django-allauth
 # ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DJANGO_ACCOUNT_ALLOW_REGISTRATION = True
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_USERNAME_REQUIRED = False
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_REQUIRED = True
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_ADAPTER = "users.adapters.AccountAdapter"
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+SOCIALACCOUNT_ADAPTER = "users.adapters.SocialAccountAdapter"
 
 
 # DATABASES
@@ -105,3 +127,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+
+SITE_ID = 1
