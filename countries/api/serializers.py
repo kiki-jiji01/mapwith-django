@@ -14,6 +14,7 @@ class  CountriesSerializer(serializers.ModelSerializer):
             "id",
             "country_name",
             "content",
+            "country_image",
             "available",
             "user",
             "date_created",
