@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 import environ
 
 
@@ -47,6 +47,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.media',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -129,3 +130,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 SITE_ID = 1
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

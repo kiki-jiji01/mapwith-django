@@ -28,14 +28,14 @@ class  CountryDetailView(RetrieveAPIView):
     
     
 class CountryUpdateView(UpdateAPIView):
-    permission_classes = [AllowAny,IsCountryOwner]
+    permission_classes = [IsAuthenticated,IsCountryOwner]
     serializer_class = CountriesSerializer
 
     def get_queryset(self):
-        return Countries.objects.filter(available=True)
+        return Countries.objects.all()
     
 
 class CountryDeleteView(DestroyAPIView):
-    permission_classes = [AllowAny,IsCountryOwner]
+    permission_classes = [IsAuthenticated,IsCountryOwner]
     def get_queryset(self):
         return Countries.objects.all()
