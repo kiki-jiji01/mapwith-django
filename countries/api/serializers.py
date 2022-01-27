@@ -13,6 +13,7 @@ class  CountriesSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "country_name",
+            "city_name",
             "content",
             "country_image",
             "available",
