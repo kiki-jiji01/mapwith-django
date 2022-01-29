@@ -2,8 +2,17 @@ from pathlib import Path
 import os
 import environ
 
+env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+env.read_env(os.path.join(BASE_DIR, '.env'))
+
+SECRET_KEY = env('SECRET_KEY')
+
+DEBUG = env('DEBUG')
+
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -133,3 +142,5 @@ SITE_ID = 1
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
