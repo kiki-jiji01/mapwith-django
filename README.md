@@ -56,3 +56,59 @@
 <a href="https://docs.google.com/presentation/d/1mqU2NHPshweJYHgzRK3IUENxkl6g5kjR-WjSTsFpFfc/edit?usp=sharing">スライド資料</a>
 
 #### ※Frontendのコードはこちらのレポジトリになります。　<br>**https://github.com/kiki-jiji01/mapapp-aws1**
+
+
+## Development
+#### frontend 
+1. Clone the repository
+
+```
+git clone https://github.com/kiki-jiji01/mapapp-aws1.git
+```
+2.Go into the repository
+```
+cd mapapp-aws1
+```
+
+3.Install dependencies
+```
+npm install
+```
+
+4.Run the app
+
+```
+npm start
+```
+
+if you want to see the map, please get "geocode api key" and set it up to ".env, Main.js".
+
+
+#### backend 
+1. Clone the repository
+```
+git clone https://github.com/kiki-jiji01/mapwith-django.git
+```
+2.Go into the repository
+```
+cd mapwith-django
+```
+
+3.Enter the virtual environment
+```
+source env/bin/activate
+```
+
+4.following this site 
+
+<a href="https://engineer-lifestyle-blog.com/code/python/django-restframework-environment-reproduce-with-github/">here</a>
+```
+pip install -r requirements.txt
+.
+.
+.
+python manage.py runserver
+```
+After that, you can see this app  at http://localhost:3000/　　　
+
+
