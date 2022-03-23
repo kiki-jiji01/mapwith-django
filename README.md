@@ -58,8 +58,14 @@
 #### ※Frontendのコードはこちらのレポジトリになります。　<br>**https://github.com/kiki-jiji01/mapapp-aws1**
 
 
-## Development
-#### frontend 
+## Requirements
+
+```
+node 16.13.1
+Python 3.7.2
+```
+## Downloading and installing steps
+### frontend 
 1. Clone the repository
 
 ```
@@ -81,10 +87,15 @@ npm install
 npm start
 ```
 
-if you want to see the map, please get "geocode api key" and set it up to ".env, Main.js".
+5.Set the Environment variable and add to Main.js
+| Environment variable　name | description |
+----|---- 
+| REACT_APP_GEOCODE_API_KEY | You can get that here(https://developers.google.com/maps/documentation/geocoding/overview) |
 
 
-#### backend 
+After that, you can see  MAP.
+
+### backend 
 1. Clone the repository
 ```
 git clone https://github.com/kiki-jiji01/mapwith-django.git
@@ -109,6 +120,12 @@ pip install -r requirements.txt
 .
 python manage.py runserver
 ```
+
+5.Set the Environment variable and add to Main.js
+| Environment variable　name | description |
+----|---- 
+| SECRET_KEY | You can get that at step 4  |
+| DEBUG | false  |
+| ALLOWED_HOSTS | localhost,0.0.0.0,127.0.0.1 |
+
 After that, you can see this app  at http://localhost:3000/　　　
-
-
